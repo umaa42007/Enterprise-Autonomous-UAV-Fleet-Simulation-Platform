@@ -1,0 +1,83 @@
+{
+  "enterprise_mission_title": "Enterprise Autonomous UAV Fleet Simulation & Mission Management",
+  "version": "3.0",
+  "base_station": {
+    "name": "Fleet Dispatch Command Hub Alpha",
+    "reference_latitude_deg": 13.0827,
+    "reference_longitude_deg": 80.2707,
+    "elevation_msl_m": 10.0
+  },
+  "airspace_rules": {
+    "minimum_separation_distance_m": 10.0,
+    "corridor_layer_alpha_m": 20.0,
+    "corridor_layer_bravo_m": 30.0,
+    "corridor_layer_charlie_m": 15.0,
+    "speed_limit_mps": 8.0,
+    "telemetry_rate_hz": 10.0
+  },
+  "fleet": [
+    {
+      "drone_id": "UAV-Alpha",
+      "callsign": "Surveyor-1",
+      "airframe_type": "Quadcopter",
+      "role": "Aerial Photogrammetry & Topographic Mapping",
+      "mass_kg": 1.8,
+      "rotor_count": 4,
+      "battery_capacity_mah": 4500,
+      "nominal_voltage_v": 14.8,
+      "cruising_speed_mps": 4.5,
+      "target_altitude_m": 20.0,
+      "launch_offset": {"x_m": 0.0, "y_m": 0.0, "z_m": 0.0},
+      "waypoints": [
+        {"id": 0, "name": "Takeoff & Climb to Layer 1", "x_m": 0.0, "y_m": 0.0, "z_m": 20.0, "speed_mps": 2.5, "action": "TAKEOFF"},
+        {"id": 1, "name": "East Sector Checkpoint 1", "x_m": 30.0, "y_m": 40.0, "z_m": 20.0, "speed_mps": 4.5, "action": "SURVEY"},
+        {"id": 2, "name": "East Sector Apex Turn", "x_m": 70.0, "y_m": 40.0, "z_m": 20.0, "speed_mps": 4.5, "action": "SURVEY"},
+        {"id": 3, "name": "East Sector Checkpoint 2", "x_m": 70.0, "y_m": 0.0, "z_m": 20.0, "speed_mps": 4.5, "action": "SURVEY"},
+        {"id": 4, "name": "RTL Stationing Point", "x_m": 0.0, "y_m": 0.0, "z_m": 20.0, "speed_mps": 3.5, "action": "RTL_HOLD"},
+        {"id": 5, "name": "Pad Alpha Touchdown", "x_m": 0.0, "y_m": 0.0, "z_m": 0.0, "speed_mps": 1.5, "action": "LAND"}
+      ]
+    },
+    {
+      "drone_id": "UAV-Bravo",
+      "callsign": "CargoExpress-2",
+      "airframe_type": "Hexacopter",
+      "role": "High-Capacity Payload Logistics Transport",
+      "mass_kg": 3.8,
+      "rotor_count": 6,
+      "battery_capacity_mah": 8000,
+      "nominal_voltage_v": 22.2,
+      "cruising_speed_mps": 5.5,
+      "target_altitude_m": 30.0,
+      "launch_offset": {"x_m": -20.0, "y_m": 10.0, "z_m": 0.0},
+      "waypoints": [
+        {"id": 0, "name": "Heavy Lift Climb to Layer 2", "x_m": -20.0, "y_m": 10.0, "z_m": 30.0, "speed_mps": 3.0, "action": "TAKEOFF"},
+        {"id": 1, "name": "North Logistics Corridor Entry", "x_m": -20.0, "y_m": 60.0, "z_m": 30.0, "speed_mps": 5.5, "action": "CARGO_TRANSIT"},
+        {"id": 2, "name": "Depot Transit Crossing", "x_m": 40.0, "y_m": 60.0, "z_m": 30.0, "speed_mps": 5.5, "action": "CARGO_TRANSIT"},
+        {"id": 3, "name": "Cargo Delivery Corridor Exit", "x_m": 40.0, "y_m": 10.0, "z_m": 30.0, "speed_mps": 5.5, "action": "CARGO_TRANSIT"},
+        {"id": 4, "name": "RTL Logistics Stationing", "x_m": -20.0, "y_m": 10.0, "z_m": 30.0, "speed_mps": 4.0, "action": "RTL_HOLD"},
+        {"id": 5, "name": "Pad Bravo Touchdown", "x_m": -20.0, "y_m": 10.0, "z_m": 0.0, "speed_mps": 1.5, "action": "LAND"}
+      ]
+    },
+    {
+      "drone_id": "UAV-Charlie",
+      "callsign": "PatrolScout-3",
+      "airframe_type": "Quadcopter",
+      "role": "Perimeter Security & Infrastructure Inspection",
+      "mass_kg": 1.5,
+      "rotor_count": 4,
+      "battery_capacity_mah": 4000,
+      "nominal_voltage_v": 14.8,
+      "cruising_speed_mps": 5.0,
+      "target_altitude_m": 15.0,
+      "launch_offset": {"x_m": 10.0, "y_m": -20.0, "z_m": 0.0},
+      "waypoints": [
+        {"id": 0, "name": "Rapid Ascent to Layer 3", "x_m": 10.0, "y_m": -20.0, "z_m": 15.0, "speed_mps": 2.5, "action": "TAKEOFF"},
+        {"id": 1, "name": "South Perimeter Sweeping WP1", "x_m": 50.0, "y_m": -20.0, "z_m": 15.0, "speed_mps": 5.0, "action": "PATROL"},
+        {"id": 2, "name": "South Industrial Boundary WP2", "x_m": 50.0, "y_m": -60.0, "z_m": 15.0, "speed_mps": 5.0, "action": "PATROL"},
+        {"id": 3, "name": "South-West Corner Post WP3", "x_m": -30.0, "y_m": -60.0, "z_m": 15.0, "speed_mps": 5.0, "action": "PATROL"},
+        {"id": 4, "name": "RTL Perimeter Stationing", "x_m": 10.0, "y_m": -20.0, "z_m": 15.0, "speed_mps": 3.5, "action": "RTL_HOLD"},
+        {"id": 5, "name": "Pad Charlie Touchdown", "x_m": 10.0, "y_m": -20.0, "z_m": 0.0, "speed_mps": 1.5, "action": "LAND"}
+      ]
+    }
+  ]
+}

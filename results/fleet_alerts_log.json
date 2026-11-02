@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp_s": 60.0,
+    "drone_id": "UAV-Bravo",
+    "severity": "WARNING",
+    "metric": "motor_vibration_g",
+    "value": 0.896,
+    "message": "Elevated bearing vibration detected (> 0.85g). Scheduled inspection recommended."
+  }
+]

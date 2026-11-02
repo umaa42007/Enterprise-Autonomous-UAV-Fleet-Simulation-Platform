@@ -1,0 +1,18 @@
+# Python virtual environments
+venv/
+ENV/
+env/
+
+# Python byte-code and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.cache
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Matplotlib cache
+.matplotlib/
